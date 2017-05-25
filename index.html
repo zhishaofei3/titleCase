@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script type="text/javascript">
+function titleCase(str1, str2) {
+	str1 = str1.toLowerCase();
+	var reg2 = str2 ? eval('/\\s[^' + str2.replace(/\s/g, '|') + ']/gi') : /\s\w/g;
+	return str1[0].toUpperCase() + str1.slice(1).replace(reg2, function (m) {
+			console.log(m);
+			return m.toUpperCase();
+	});
+}
+
+console.log(titleCase('a clash of KINGS', 'a an the of')) // should return: 'A Clash of Kings'
+console.log(titleCase('THE WIND IN THE WILLOWS', '  The In  ')) // should return: 'The Wind in the Willows'
+console.log(titleCase('the quick brown fox')) // should return: 'The Quick Brown Fox'
+console.log(titleCase('the quick BROWN fox')) // should return: 'The Quick Brown Fox'
+</script>
+
+</body>
+</html>
