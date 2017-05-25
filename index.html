@@ -11,7 +11,6 @@ function titleCase(str1, str2) {
 	str1 = str1.toLowerCase();
 	var reg2 = str2 ? eval('/\\s[^' + str2.replace(/\s/g, '|') + ']/gi') : /\s\w/g;
 	return str1[0].toUpperCase() + str1.slice(1).replace(reg2, function (m) {
-			console.log(m);
 			return m.toUpperCase();
 	});
 }
